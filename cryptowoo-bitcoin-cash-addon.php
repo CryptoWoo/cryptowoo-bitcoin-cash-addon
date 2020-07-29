@@ -292,7 +292,7 @@ function cwbch_wallet_config( $wallet_config, $currency, $options ) {
 		$wallet_config                         = array(
 			'coin_client'   => 'bitcoincash',
 			'request_coin'  => 'BCH',
-			'multiplier'    => (float) $options[ 'multiplier_bch' ],
+			'multiplier'    => CW_Validate::check_if_unset( 'multiplier_bch', $options, 1.00 ),
 			'safe_address'  => false,
 			'decimals'      => 8,
 			'mpk_key'       => 'cryptowoo_bch_mpk',
